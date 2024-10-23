@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vibration Example</title>
+    <style>
+        /* Styling the vibrating element */
+        #vibrate {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            margin: 50px auto;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="vibrate"></div>
+
+    <script>
+        const vibrateElement = document.getElementById('vibrate')
+
+        setInterval(() => {
+            vibrateElement.style.transform = 'translate(2px, 0)'
+            setTimeout(() => {
+                vibrateElement.style.transform = 'translate(-2px, 0)'
+            }, 50)
+            setTimeout(() => {
+                vibrateElement.style.transform = 'translate(0, 0)'
+navigator.vibrate(100)
+            }, 100)
+        }, 500)
+    </script>
+
+</body>
+</html>
